@@ -1,2 +1,4 @@
-# Fsd_Miniproject
-Created with CodeSandbox
+# Running ShareABite on your PC
+
+npm install
+npm start (Ignore vulnerabilities!)
