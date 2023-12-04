@@ -97,7 +97,7 @@ function About() {
         <br />
         <span>
           Getting the food to neighborhood organizations that assist those in
-          need is, in our opinion, one of the best ways to minimize food waste
+          need. In our opinion, one of the best ways to minimize food waste
           because it guarantees that the food will be utilized where it is most
           needed.
         </span>
@@ -147,9 +147,9 @@ function About() {
             style={{ height: "180px", width: "180px", marginTop: "50px" }}
           />
 
-          <h2>Rescue Food</h2>
+          <h2>Deliever Food</h2>
           <span style={{ width: "70%", padding: "0 15px" }}>
-            "Rescue food and extend a lifeline to those in need."
+            "Deliever food and extend a lifeline to those in need."
           </span>
         </div>
         <div

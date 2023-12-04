@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import background from "../assets/img5";
-import Form from "../components/Forms";
+import CheckboxForm from "../components/Foodform";
 
 function Donate() {
   return (
@@ -13,7 +13,7 @@ function Donate() {
 cName="Hero"
         heroImg={background}
         title=""
-        text=<Form/>
+        text=<CheckboxForm/>
         buttonText=""
         url=""
         btnClass=""
