@@ -13,7 +13,8 @@ function Home() {
         heroImg={background}
         heroimg={image}
         title="Better Feed Than Waste"
-        text="NO ONE CAN DO EVERYTHING, BUT EVERYONE CAN DO SOMETHING."        
+        text="NO ONE CAN DO EVERYTHING, BUT EVERYONE CAN DO SOMETHING."  
+        p="Login to DONATE!!"      
       />
     <Footer />
 

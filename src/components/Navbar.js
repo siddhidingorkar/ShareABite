@@ -13,11 +13,14 @@ const Navbar = () => {
   };
 
   const handleLogout = () => {
+    console.log("Logging out...");
     localStorage.removeItem("user");
-    navigate("/login");
+    navigate("/"); // or use <Navigate to="/" replace /> if using React Router v6
   };
-
+  
   const user = JSON.parse(localStorage.getItem("user"));
+
+  
 
   return (
     <nav className="NavbarItems">

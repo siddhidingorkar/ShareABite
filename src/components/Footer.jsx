@@ -1,24 +1,33 @@
-// components/Footer.js
-
 import React from 'react';
-import './Footer.css'; // Import a separate CSS file for styling (create this file)
 
 const Footer = () => {
+  const footerStyle = {
+    backgroundColor: '#2a284d',
+    color: 'white',
+    padding: '20px 0',
+    textAlign: 'center',
+    
+  };
+
+  const linkStyle = {
+    color: 'white',
+    textDecoration: 'none',
+    margin: '20 20px',
+  };
+
   return (
-    <footer className="footer">
+    <footer style={footerStyle}>
       <div className="container">
         <div className="footer-content">
-          <div className="footer-left">
-            <p>&copy; 2023 Your Website. All rights reserved.</p>
-          </div>
-          <div className="footer-right">
-            <a href="/terms">Terms of Service</a>
-            <a href="/privacy">Privacy Policy</a>
-          </div>
+          <p>&copy; 2023 Open Minds</p>
+          <ul className="footer-links">
+            <li><a style={linkStyle} href="#">About</a></li>
+            <li><a style={linkStyle} href="#">Contact</a></li>
+          </ul>
         </div>
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

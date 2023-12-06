@@ -110,6 +110,7 @@ export default function SignupForm() {
             fullWidth
             id="phone"
             label="Phone Number"
+            type="Phone Number"
             name="phone"
           />
 

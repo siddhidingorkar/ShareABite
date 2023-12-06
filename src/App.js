@@ -9,6 +9,7 @@ import Food from "./routes/Food";
 import SignUp from "./routes/Signup";
 import toast, { Toaster } from 'react-hot-toast';
 import DashboardContent from "./components/Dashboard";
+import PickupConfirmedPage from "./components/Pickup";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/food" element={<Food />} />
         <Route path="/dashboard" element={<DashboardContent/>}/>
+        <Route path="/pickup" element={<PickupConfirmedPage/>}/>
       </Routes>
     </div>
   );

@@ -2,6 +2,8 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import background from "../assets/img5";
 import CheckboxForm from "../components/Foodform";
+import Footer from '../components/Footer';
+
 
 function Donate() {
   return (
@@ -18,6 +20,7 @@ cName="Hero"
         url=""
         btnClass=""
       />
+    <Footer />
       
     </>
   );
