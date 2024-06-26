@@ -102,6 +102,9 @@ button:hover {
     background: goldenrod;
     transition: none;
   }
+  button {
+    display: none;
+  }
   .nav-links-mobile {
     display: block;
     text-align: center;
@@ -127,7 +130,4 @@ button:hover {
 }
 .Signup{
   background-color: goldenrod;
-}
-@media screen and (max-height:390px) {
-
 }

@@ -8,7 +8,6 @@
     height: 100vh;
     object-fit: cover;
   }
-
   .hero-text {
     position: absolute;
     top: 45%;
@@ -29,7 +28,6 @@
     color: #fff;
     padding: 0.5 rem 0 2rem 0;
     margin-bottom: 25px;
-    font-weight: 500;
   }
   
   .hero-text .show {

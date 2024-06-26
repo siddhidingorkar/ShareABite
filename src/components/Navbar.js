@@ -1,81 +1,39 @@
-import React, { Component, useState } from "react";
+import { Component } from "react";
 import "./NavbarStyles.css";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { MenuItems } from "./MenuItems";
 
-
-const Navbar = () => {
-  const navigate = useNavigate();
-  const [clicked, setClicked] = useState(false);
-
-  const handleclick = () => {
-    setClicked(!clicked);
+class Navbar extends Component {
+  state = { clicked: false };
+  handleclick = () => {
+    this.setState({ clicked: !this.state.clicked });
   };
+  render() {
+    return (
+      <nav className="NavbarItems">
+        <h1 className="navbar-logo">ShareABite</h1>
+        <div className="menu-icons" onClick={this.handleclick}>
+          <i
+            className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
+          ></i>
+        </div>
 
-  const handleLogout = () => {
-    console.log("Logging out...");
-    localStorage.removeItem("user");
-    navigate("/"); // or use <Navigate to="/" replace /> if using React Router v6
-  };
-  
-  const user = JSON.parse(localStorage.getItem("user"));
-
-  
-
-  return (
-    <nav className="NavbarItems">
-      <h1 className="navbar-logo">ShareABite</h1>
-      <div className="menu-icons" onClick={handleclick}>
-        <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
-      </div>
-
-      <ul className={clicked ? "nav-menu active" : "nav-menu"}>
-        <li>
-          <Link className="nav-links" to="/">
-            <i className="fa-solid fa-house-user"></i>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link className="nav-links" to="/about">
-            <i className="fa-solid fa-circle-info"></i>
-            About
-          </Link>
-        </li>
-        
-        <li>
-          {user ? (
-            <>
-          
-          <Link className="nav-links" to="/donate">
-            <i className="fa-solid fa-hand-holding-dollar"></i>
-            Donate
-          </Link>
-      
-              <Link className="nav-links" to="/dashboard">
-                {`Hello, ${user.name}`}
-              </Link>
-              <Link className="nav-links" onClick={handleLogout}>
-                <i className="fa-solid fa-right-to-bracket"></i>
-                Logout
-              </Link>
-            </>
-          ) : (
-            <>
-              <Link className="nav-links" to="/login">
-                <i className="fa-solid fa-right-to-bracket"></i>
-                Login
-              </Link>
-              <Link className="nav-links" to="/signup">
-                <i className="fa-solid fa-right-to-bracket"></i>
-                SignUp
-              </Link>
-            </>
-          )}
-        </li>
-      </ul>
-    </nav>
-  );
-};
+        <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
+          {MenuItems.map((item, index) => {
+            return (
+              <li key={index}>
+                <Link className={item.cName} to={item.url}>
+                  <i className={item.icon}></i>
+                  {item.title}
+                </Link>
+              </li>
+            );
+          })}
+          {/* <button className="Signup">Sign Up</button> */}
+        </ul>
+      </nav>
+    );
+  }
+}
 
 export default Navbar;

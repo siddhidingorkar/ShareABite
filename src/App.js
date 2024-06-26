@@ -7,14 +7,9 @@ import Contact from "./routes/Contact";
 import Login from "./routes/Login";
 import Food from "./routes/Food";
 import SignUp from "./routes/Signup";
-import toast, { Toaster } from 'react-hot-toast';
-import DashboardContent from "./components/Dashboard";
-import PickupConfirmedPage from "./components/Pickup";
-
 export default function App() {
   return (
     <div className="App">
-      <Toaster/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -23,8 +18,6 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/food" element={<Food />} />
-        <Route path="/dashboard" element={<DashboardContent/>}/>
-        <Route path="/pickup" element={<PickupConfirmedPage/>}/>
       </Routes>
     </div>
   );

@@ -13,11 +13,20 @@ function Form() {
     setSelectedOption(option);
   };
 
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
 
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
 
   const handleDonateClick = () => {
     // Validate name and email before proceeding
-   
+    if (name.trim() === '' || !isValidEmail(email)) {
+      alert('Please fill in a valid name and email before donating.');
+      return;
+    }
 
     // Redirect based on the selected option
     switch (selectedOption) {
@@ -33,6 +42,11 @@ function Form() {
     }
   };
 
+  const isValidEmail = (email) => {
+    // Basic email validation, you might want to use a more robust solution
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
 
   return (
     <form className="container">
@@ -40,7 +54,12 @@ function Form() {
         <h1>Donate Here</h1>
       </div>
 
-
+      <div>
+        <input type="text" placeholder="Enter Name" name="name" value={name} onChange={handleNameChange} />
+      </div>
+      <div>
+        <input type="text" placeholder="Enter Email" name="email" value={email} onChange={handleEmailChange} />
+      </div>
 
       {/* Use the CheckboxGroup component */}
       <div className="input-group">
